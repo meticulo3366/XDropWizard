@@ -32,7 +32,7 @@ import com.google.common.base.Optional;
 /**
  * @author timmolter
  */
-@Path("hello-world")
+@Path("hello-sua")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
 
@@ -57,7 +57,6 @@ public class HelloWorldResource {
   @GET
   @Timed
   public Saying sayHello(@QueryParam("name") Optional<String> name) {
-
     return new Saying(counter.incrementAndGet(), String.format(template, name.or(defaultName)));
   }
 }
