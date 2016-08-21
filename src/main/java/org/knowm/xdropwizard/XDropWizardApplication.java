@@ -81,7 +81,7 @@ public class XDropWizardApplication extends Application<XDropWizardApplicationCo
     final String defaultName = configuration.getDefaultName();
     environment.jersey().register(new HelloWorldResource(template, defaultName));
 
-    environment.jersey().register(new WeatherResource("Slightly Cloudy", 3, 4));
+    environment.jersey().register(new WeatherResource("San Fran", 32, 0));
 
     environment.healthChecks().register("TemplateHealth", new TemplateHealthCheck(template));
 

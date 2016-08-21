@@ -23,26 +23,31 @@ import com.google.common.base.Optional;
 public class WeatherResource {
 
     private final String location;
+    private final String temperatureString;
     private final int c;
     private final int f;
+    private final AtomicLong counter;;
 
     /**
      * Constructor
      *
      * @param location
-     * @param c
      * @param f
+     * @param c
      */
 
     public WeatherResource(String location, int f, int c) {
+        this.counter = new AtomicLong();
         this.location = location;
         this.f = f;
         this.c = c;
+        this.temperatureString = "It's "+ f + "degrees out.";
     }
 
     /** Dropwizard automatically records the duration and rate of its invocations as a Metrics Timer. */
     @GET
     public Weather getWeather() {
-        return new Weather(location, 3, 32);
+        return new Weather(counter.incrementAndGet(), temperatureString +  "\\n" + Integer.toString(c) + " C");
+
     }
 }
