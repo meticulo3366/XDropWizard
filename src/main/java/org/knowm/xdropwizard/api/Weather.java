@@ -21,6 +21,15 @@ public class Weather {
      *
      * @param content
      * @param content
+     *
+     * {
+    "text": "It's 80 degrees right now.",
+    "attachments": [
+    {
+    "text":"Partly cloudy today and tomorrow"
+    }
+    ]
+    }
      */
     public Weather(String weather, int temp_c, int temp_f) {
         this.temp_c = temp_c;
@@ -30,20 +39,24 @@ public class Weather {
         System.out.print("TEMP STRING: " + temperature_string);
     }
 
-    public int getTempF() {
-        return temp_f;
-    }
+//    public int getTempF() {
+//        return temp_f;
+//    }
+//
+//    public int getTempC() {
+//        return temp_c;
+//    }
+//
+//    public String getWeather() {
+//        return weather;
+//    }
+//
+//    public String getTemperatureString() {
+//        return temperature_string;
+//    }
 
-    public int getTempC() {
-        return temp_c;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
-    public String getTemperatureString() {
-        return temperature_string;
+    public String getText() {
+        return  weather;
     }
 
 
