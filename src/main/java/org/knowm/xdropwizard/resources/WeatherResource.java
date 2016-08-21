@@ -41,7 +41,7 @@ public class WeatherResource {
         this.location = location;
         this.f = f;
         this.c = c;
-        this.temperatureString = "It's "+ f + "degrees out.";
+        this.temperatureString = "It's "+ f + " degrees out.";
     }
 
     /** Dropwizard automatically records the duration and rate of its invocations as a Metrics Timer. */
