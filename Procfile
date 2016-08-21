@@ -1,1 +1,1 @@
-web: java -jar target/xdropwizard.jar server xdropwizard.yml -D server.port=$PORT
+web: java -jar target/xdropwizard.jar server.port=$PORT xdropwizard.yml
