@@ -5,7 +5,7 @@ server:
   adminContextPath: /admin
   connector:
     type: http
-    port: 9090
+    port: 48070
   
 logging:
   level: INFO
