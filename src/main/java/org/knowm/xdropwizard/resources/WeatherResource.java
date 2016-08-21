@@ -47,7 +47,7 @@ public class WeatherResource {
     /** Dropwizard automatically records the duration and rate of its invocations as a Metrics Timer. */
     @GET
     public Weather getWeather() {
-        return new Weather(counter.incrementAndGet(), temperatureString +  "\\n" + Integer.toString(c) + " C");
+        return new Weather(counter.incrementAndGet(), temperatureString +  "\n " + Integer.toString(c) + " C");
 
     }
 }
