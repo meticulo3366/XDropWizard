@@ -24,6 +24,7 @@ import org.knowm.xdropwizard.health.TemplateHealthCheck;
 import org.knowm.xdropwizard.manager.YankManager;
 import org.knowm.xdropwizard.resources.AuthenticatorExample;
 import org.knowm.xdropwizard.resources.HelloWorldResource;
+import org.knowm.xdropwizard.resources.WeatherResource;
 import org.knowm.xdropwizard.resources.YankBookResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,6 +80,9 @@ public class XDropWizardApplication extends Application<XDropWizardApplicationCo
     final String template = configuration.getTemplate();
     final String defaultName = configuration.getDefaultName();
     environment.jersey().register(new HelloWorldResource(template, defaultName));
+
+    environment.jersey().register(new WeatherResource("Slightly Cloudy", 3, 4));
+
     environment.healthChecks().register("TemplateHealth", new TemplateHealthCheck(template));
 
     // MANAGERS /////////////////////////

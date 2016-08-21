@@ -18,23 +18,31 @@ import com.google.common.base.Optional;
  */
 @Path("weather")
 @Produces(MediaType.APPLICATION_JSON)
+
+
 public class WeatherResource {
 
     private final String location;
+    private final int c;
+    private final int f;
 
     /**
      * Constructor
      *
      * @param location
+     * @param c
+     * @param f
      */
-    public WeatherResource(String location) {
+
+    public WeatherResource(String location, int f, int c) {
         this.location = location;
+        this.f = f;
+        this.c = c;
     }
 
     /** Dropwizard automatically records the duration and rate of its invocations as a Metrics Timer. */
     @GET
     public Weather getWeather() {
-        console.log("BRUH>>>>>>>>>>>>>>>", location);
-        return new Weather(String.format(location));
+        return new Weather(location, 3, 32);
     }
 }
